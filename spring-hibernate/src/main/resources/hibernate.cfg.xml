@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库信息（连接信息写到spring的配置文件中） -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+			<!-- 和spring整合后 environments配置将废除-->
+	        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	        <property name="connection.url">jdbc:oracle:thin:@localhost:1527:HB</property>
+	        <property name="connection.username">scott</property>
+	        <property name="connection.password">orcl</property>
+		<!-- 其他配置 -->
+		        <!-- 执行操作时是否在控制台打印SQL -->  
+        <property name="show_sql">true</property>  
+          
+        <!-- 是否对SQL格式 -->  
+        <property name="format_sql">true</property>  
+		<!-- <mapping class="com.hb.hibernate_out_spring.entity.Students"/> -->
+		<mapping resource="com/hb/hibernate_out_spring/entity/Students.hbm.xml"/> 
+	</session-factory>
+</hibernate-configuration>

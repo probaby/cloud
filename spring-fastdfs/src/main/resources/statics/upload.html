@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- import Vue.js -->
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <!-- import iView -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+
+    <Upload  :on-success="handleSuccess"
+            action="//localhost:8082/upload/image/">
+        <Button icon="ios-cloud-upload-outline">Upload files</Button>
+    </Upload>
+    <img :src="item.url">
+</div>
+</body>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            loginParam: {
+
+            },
+            item:{
+                url: "",
+            }
+
+        },
+
+        methods: {
+            handleSuccess:function(res, file) {
+                console.log(res)
+                this.item.url = res;
+            },
+        },
+        created: function(){
+            //  在 created 中，data 和 methods 都已经被初始化好了！
+            // 如果要调用 methods 中的方法，或者操作 data 中的数据，最早，只能在 created 中操作
+
+        },
+        updated: function () {
+            // updated 事件执行的时候，页面和 data 数据已经保持同步了，都是最新的,只要有数据更新就会执行updated方法
+
+
+        },
+        mounted:function () {
+
+            // 已经真实的挂载到了页面中，用户已经可以看到渲染好的页面了
+
+
+        }
+
+
+    })
+
+
+</script>
+</html>

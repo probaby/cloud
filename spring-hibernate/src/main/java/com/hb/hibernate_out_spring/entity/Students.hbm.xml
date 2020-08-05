@@ -1,0 +1,36 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+<!-- Generated 2016-5-14 22:57:16 by Hibernate Tools 3.4.0.CR1 -->  
+<hibernate-mapping>  
+    <!--   
+        name="com.baidu.hibernate.helloworld.News"  :全类名  
+        table="NEWS" ：创建的 表 的名称  
+          
+        name="id" type="java.lang.Integer" :主键 和其类型  
+          
+        column name="ID" :表 NEWS 中 的 一列 列名是 ID  
+        generator class="native"   : 指定主键的生成方式   
+                            native ：使用数据库本地方式生成主键  
+          
+      -->  
+    <class name="com.hb.hibernate_out_spring.entity.Students" table="STUDENTS">  
+          
+        <id name="studentsId" type="java.lang.Integer">  
+            <column name="studentsId" />  
+                <!-- 指定主键的生成方式  native：使用数据库本地方式 -->  
+           <!--  <generator class="native" />  --> 
+        </id>  
+          
+        <property name="studentsName" type="java.lang.String">  
+            <column name="StudentsName" />  
+        </property>  
+        <property name="age" type="java.lang.Integer">  
+            <column name="age" />  
+        </property>  
+        <property name="address" type="java.lang.String">  
+            <column name="address" />  
+        </property>  
+    </class>  
+      
+</hibernate-mapping> 
